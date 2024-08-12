@@ -1,8 +1,10 @@
 [package]
 name = "esoteric-vm"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 repository = "https://www.github.com/tadaHrd/esoteric-vm"
+description = "An esoteric virtual machine"
+license = "MIT"
 
 [dependencies]
 crossterm = { version = "0.28.1", features = ["events", "windows"] }
