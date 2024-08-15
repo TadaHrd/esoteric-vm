@@ -6,7 +6,7 @@
 //! # Examples
 //!
 //! ```rust
-//! use esoteric_vm::{esoteric_assembly, machine::Machine};
+//! use esoteric_vm::{esoteric_assembly, Machine};
 //!
 //! # fn main() -> Machine {
 //! // initialize a new machine
@@ -34,7 +34,7 @@
 //!     12: Ωskiptothechase;
 //!
 //!     // hello world text
-//!     13: data b"Hello, world!\0";
+//!     13: data b"Hello, world!\n\0";
 //! };
 //!
 //! // load machine code

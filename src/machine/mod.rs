@@ -31,7 +31,7 @@ use crate::{
 /// # Examples
 ///
 /// ```rust
-/// # use esoteric_vm::{esoteric_assembly, machine::Machine};
+/// # use esoteric_vm::{esoteric_assembly, Machine};
 ///
 /// # fn main() -> Machine {
 /// // initialize a new machine
@@ -59,7 +59,7 @@ use crate::{
 ///     12: Ωskiptothechase;
 ///
 ///     // hello world text
-///     13: data b"Hello, world!\0";
+///     13: data b"Hello, world!\n\0";
 /// };
 ///
 /// // load machine code
@@ -827,7 +827,7 @@ impl Machine {
                 }
 
                 self.num_debug();
-                println!("{}", self.reg_ß);
+                print!("{}", self.reg_ß);
             }
             WriteLine(data) => 'block: {
                 if self.memory[self.reg_dp as usize] != b'.' {
@@ -843,7 +843,7 @@ impl Machine {
                 .to_string_lossy();
 
                 self.num_debug();
-                println!("{str}");
+                print!("{str}");
             }
 
             ToggleDebug => self.debug_mode = !self.debug_mode,
@@ -855,7 +855,7 @@ impl Machine {
                 }
 
                 self.num_debug();
-                println!("{self:#?}");
+                print!("{self:#?}");
             }
             DebugMachineStateCompact => 'block: {
                 if self.memory[self.reg_dp as usize] != b'.' {
@@ -864,7 +864,7 @@ impl Machine {
                 }
 
                 self.num_debug();
-                println!("{self:?}");
+                print!("{self:?}");
             }
 
             DebugMemoryRegion(data0, data1) => 'block: {
@@ -874,7 +874,7 @@ impl Machine {
                 }
 
                 self.num_debug();
-                println!("{:?}", &self.memory[(data0 as usize)..(data1 as usize)]);
+                print!("{:?}", &self.memory[(data0 as usize)..(data1 as usize)]);
             }
             DebugStackRegion(data0, data1) => 'block: {
                 if self.memory[self.reg_dp as usize] != b'.' {
@@ -883,7 +883,7 @@ impl Machine {
                 }
 
                 self.num_debug();
-                println!("{:?}", &self.stack.vec[(data0 as usize)..(data1 as usize)]);
+                print!("{:?}", &self.stack.vec[(data0 as usize)..(data1 as usize)]);
             }
             ShowChoice => 'block: {
                 if self.memory[self.reg_dp as usize] != b'.' {

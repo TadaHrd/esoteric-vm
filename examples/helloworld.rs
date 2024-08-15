@@ -26,7 +26,7 @@ fn main() -> Machine {
         12: Ωskiptothechase;
 
         // hello world text
-        13: data b"Hello, world!\0";
+        13: data b"Hello, world!\n\0";
     };
 
     // load machine code
