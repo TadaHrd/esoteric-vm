@@ -1,6 +1,6 @@
 //! An esoteric virtual machine.
 //!
-//! Create a new machine with [`Machine::new`] and load
+//! Create a new machine with [`Machine::default`] and load
 //! machine code and data to it with [`Machine::load`].
 //!
 //! # Examples
